@@ -14,7 +14,16 @@ import {
   Input,
 } from "reactstrap";
 
-const UserTable = ({ id, name, email, phone, deleteUser }) => {
+const UserTable = ({
+  id,
+  name,
+  email,
+  phone,
+  address,
+  company,
+  website,
+  deleteUser,
+}) => {
   // Estado para la ventana modal
   const [modal, setModal] = useState(false);
 
@@ -37,7 +46,6 @@ const UserTable = ({ id, name, email, phone, deleteUser }) => {
               <Input
                 id="name"
                 name="name"
-                placeholder="Ingresar nombre"
                 type="text"
                 value={name}
                 disabled={true}
@@ -49,7 +57,6 @@ const UserTable = ({ id, name, email, phone, deleteUser }) => {
               <Input
                 id="email"
                 name="email"
-                placeholder="Ingresar correo"
                 type="email"
                 value={email}
                 disabled={true}
@@ -61,9 +68,41 @@ const UserTable = ({ id, name, email, phone, deleteUser }) => {
               <Input
                 id="phone"
                 name="phone"
-                placeholder="Ingresar teléfono"
                 type="tel"
                 value={phone}
+                disabled={true}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Label for="address">Dirección</Label>
+              <Input
+                id="address"
+                name="address"
+                type="text"
+                value={`${address.city} - ${address.street} ${address.suite}`}
+                disabled={true}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Label for="company">Compañía</Label>
+              <Input
+                id="company"
+                name="company"
+                type="text"
+                value={company.name}
+                disabled={true}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Label for="website">Sitio Web</Label>
+              <Input
+                id="website"
+                name="website"
+                type="text"
+                value={website}
                 disabled={true}
               />
             </FormGroup>

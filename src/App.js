@@ -33,6 +33,7 @@ function App() {
         console.log(error);
       });
   };
+  console.log(users)
 
   // Petición API para agregar un nuevo usuario
   const addUser = async (name, email, phone) => {
