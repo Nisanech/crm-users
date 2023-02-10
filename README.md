@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1 align="center">CRM Usuarios</h1>
+  <a href="https://crm-users.vercel.app/">
+    <img src="https://github.com/Nisanech/crm-users/blob/main/src/assets/img/Crm-usuarios.jpg" alt="CRM" width="40%" height="40%">
+  </a>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre la Aplicación
 
-## Available Scripts
+Aplicación web para gestionar la información básica de los usuarios por medio del consumo de una API.
 
-In the project directory, you can run:
+### Características de la Aplicación
 
-### `npm start`
+- Agregar usuario
+- Visualizar usuario
+- Eliminar usuario
+- Filtrar usuarios por nombre
+- Ordenar usuarios por nombre o correo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Despliegue de la Aplicación
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://crm-users.vercel.app/
 
-### `npm test`
+### Tecnologías de Desarrollo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta aplicación fue desarrollada con:
 
-### `npm run build`
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Estas instrucciones te permitirán obtener una copia del proyecto totalmente funcional para propósitos de desarrollo y pruebas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clonar el repositorio
 
-### `npm run eject`
+   ```sh
+   git clone https://github.com/Nisanech/crm-users.git
+   ```
+ 
+2. Ingresar a la carpeta del proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```sh
+   cd crm-users
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Abrir el proyecto en VSC o en el programa que utilices para visualizar el código.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Iniciar una nueva terminal e instalar las dependencias de npm
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```sh
+   npm install
+   ```
 
-## Learn More
+4. En la terminal iniciar la aplicación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
