@@ -1,65 +1,100 @@
-import React from "react";
+// Dependencias
+import React, { useState } from "react";
 
-const UserTable = () => {
+// Estilos
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
+
+const UserTable = ({ id, name, email, phone, deleteUser }) => {
+  // Estado para la ventana modal
+  const [modal, setModal] = useState(false);
+
+  // Función para abrir o cerrar el modal
+  const toggle = () => setModal(!modal);
+
+  // Función para eliminar un usuario
+  const handleDelete = () => {
+    deleteUser(id);
+  };
+
   return (
-    <div class="relative overflow-x-auto">
-      <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-sm text-white text-center uppercase bg-dark_primary font-Poppins font-medium">
-          <tr>
-            <th scope="col" class="px-6 py-3">
-              ID
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Nombre
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Correo
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Teléfono
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Acciones
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-white border-gray">
-            <th
-              scope="row"
-              class="px-6 py-4 font-Poppins text-black whitespace-nowrap"
-            >
-              1
-            </th>
-            <td class="px-6 py-4 font-Poppins">Leanne Graham</td>
-            <td class="px-6 py-4 font-Poppins">Sincere@april.biz</td>
-            <td class="px-6 py-4 font-Poppins">1-770-736-8031 x56442</td>
-            <td class="px-6 py-4 font-Poppins flex justify-evenly">
-              <i class="ri-pencil-fill text-bg_light_primary text-[20px] cursor-pointer"></i>
-              <i class="ri-eye-fill text-bg_light_secondary text-[20px] cursor-pointer"></i>
-              <i class="ri-delete-bin-fill text-bg_light_primary text-[20px] cursor-pointer"></i>
-            </td>
-          </tr>
+    <>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Visualizar Usuario</ModalHeader>
+        <ModalBody>
+          <Form>
+            <FormGroup>
+              <Label for="name">Nombre</Label>
+              <Input
+                id="name"
+                name="name"
+                placeholder="Ingresar nombre"
+                type="text"
+                value={name}
+                disabled={true}
+              />
+            </FormGroup>
 
-          <tr class="bg-white border-gray">
-            <th
-              scope="row"
-              class="px-6 py-4 font-Poppins text-black whitespace-nowrap"
-            >
-              2
-            </th>
-            <td class="px-6 py-4 font-Poppins">Leanne Graham</td>
-            <td class="px-6 py-4 font-Poppins">Sincere@april.biz</td>
-            <td class="px-6 py-4 font-Poppins">1-770-736-8031 x56442</td>
-            <td class="px-6 py-4 font-Poppins flex justify-evenly">
-              <i class="ri-pencil-fill text-bg_light_primary text-[20px] cursor-pointer"></i>
-              <i class="ri-eye-fill text-bg_light_secondary text-[20px] cursor-pointer"></i>
-              <i class="ri-delete-bin-fill text-bg_light_primary text-[20px] cursor-pointer"></i>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            <FormGroup>
+              <Label for="email">Correo</Label>
+              <Input
+                id="email"
+                name="email"
+                placeholder="Ingresar correo"
+                type="email"
+                value={email}
+                disabled={true}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Label for="phone">Teléfono</Label>
+              <Input
+                id="phone"
+                name="phone"
+                placeholder="Ingresar teléfono"
+                type="tel"
+                value={phone}
+                disabled={true}
+              />
+            </FormGroup>
+          </Form>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggle}>
+            Aceptar
+          </Button>
+        </ModalFooter>
+      </Modal>
+
+      {/* Fila de la tabla */}
+      <tr className="bg-white border-gray">
+        <td className="px-6 py-4 font-Poppins">{name}</td>
+
+        <td className="px-6 py-4 font-Poppins">{email}</td>
+
+        <td className="px-6 py-4 font-Poppins">{phone}</td>
+
+        <td className="px-6 py-4 font-Poppins flex justify-evenly">
+          <button onClick={toggle}>
+            <i className="ri-eye-fill text-bg_light_secondary text-[20px] cursor-pointer"></i>
+          </button>
+
+          <button onClick={handleDelete}>
+            <i className="ri-delete-bin-fill text-bg_light_primary text-[20px]"></i>
+          </button>
+        </td>
+      </tr>
+    </>
   );
 };
 

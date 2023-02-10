@@ -1,22 +1,28 @@
 import React from "react";
 
-const Select = () => {
+const Select = ({ sortByName, sortByEmail }) => {
   return (
     <>
-      <div className="mt-4 flex flex-col lg:flex-row lg:items-center w-full gap-2 lg:gap-5">
-        <label htmlFor="users" className="font-Poppins text-gray w-2/5">
-          Ordenar por:
-        </label>
-        <select
-          id="users"
-          className="bg-gray-50 border border-gray text-black text-sm rounded-lg w-full p-2.5 "
+      <div className="mt-4 flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-5 mb-5">
+        <p className="font-Poppins text-gray m-0">Ordenar por:</p>
+
+        <div
+          className="flex items-center gap-3 cursor-pointer ml-5"
+          onClick={sortByName}
         >
-          <option selected disabled>
-            -- Selecciona --
-          </option>
-          <option value="name">Nombre</option>
-          <option value="email">Correo</option>
-        </select>
+          <p className="m-0">Nombre</p>
+
+          <i className="ri-arrow-up-down-fill text-dark_primary"></i>
+        </div>
+
+        <div
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={sortByEmail}
+        >
+          <p className="m-0">Correo</p>
+
+          <i className="ri-arrow-up-down-fill text-dark_primary"></i>
+        </div>
       </div>
     </>
   );

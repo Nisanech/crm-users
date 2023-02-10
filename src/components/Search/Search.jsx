@@ -1,11 +1,20 @@
 import React from "react";
 
-const Search = () => {
+const Search = ({ setSearchUser }) => {
+  // Valor del input
+  const inputChange = setSearchUser;
+
+  // Función para capturar el valor del input cuando cambie
+  const onInputChange = (e) => {
+    inputChange(e.target.value);
+  };
+
   return (
-    <form className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-5 w-full">
+    <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-5 w-full">
       <label htmlFor="search" className="font-Poppins text-gray mb-2 lg:w-2/5 ">
         Buscar usuario
       </label>
+
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
@@ -22,14 +31,16 @@ const Search = () => {
             ></path>
           </svg>
         </div>
+
         <input
-          type="search"
           id="search"
+          type="search"
+          placeholder="Buscar usuario"
+          onChange={onInputChange}
           className="bg-gray-50 border border-gray text-black text-sm rounded-lg block w-full lg:w-4/5 pl-10 p-2.5"
-          placeholder="Search"
         />
       </div>
-    </form>
+    </div>
   );
 };
 

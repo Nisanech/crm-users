@@ -1,5 +1,7 @@
+// Dependencias
 import React, { useState } from "react";
 
+// Estilos
 import {
   Button,
   Modal,
@@ -12,10 +14,26 @@ import {
   Input,
 } from "reactstrap";
 
-const AddUser = () => {
+const AddUser = ({ addUser }) => {
+  // Estado para la ventana modal
   const [modal, setModal] = useState(false);
 
+  // Función para abrir o cerrar el modal
   const toggle = () => setModal(!modal);
+
+  // Función para el envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    addUser(e.target.name.value, e.target.email.value, e.target.phone.value);
+
+    e.target.name.value = "";
+    e.target.email.value = "";
+    e.target.phone.value = "";
+
+    toggle();
+  };
+
   return (
     <>
       <button
@@ -28,7 +46,7 @@ const AddUser = () => {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Agregar Usuario</ModalHeader>
         <ModalBody>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <FormGroup>
               <Label for="name">Nombre</Label>
               <Input
@@ -38,7 +56,7 @@ const AddUser = () => {
                 type="text"
               />
             </FormGroup>
-            
+
             <FormGroup>
               <Label for="email">Correo</Label>
               <Input
@@ -59,7 +77,9 @@ const AddUser = () => {
               />
             </FormGroup>
 
-            <Button color="primary">Agregar</Button>
+            <Button color="primary" onSubmit={handleSubmit}>
+              Agregar
+            </Button>
           </Form>
         </ModalBody>
         <ModalFooter>
