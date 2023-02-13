@@ -14,16 +14,7 @@ import {
   Input,
 } from "reactstrap";
 
-const UserTable = ({
-  id,
-  name,
-  email,
-  phone,
-  address,
-  company,
-  website,
-  deleteUser,
-}) => {
+const UserTable = ({ id, name, email, phone, deleteUser }) => {
   // Estado para la ventana modal
   const [modal, setModal] = useState(false);
 
@@ -70,39 +61,6 @@ const UserTable = ({
                 name="phone"
                 type="tel"
                 value={phone}
-                disabled={true}
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <Label for="address">Dirección</Label>
-              <Input
-                id="address"
-                name="address"
-                type="text"
-                value={`${address.city} - ${address.street} ${address.suite}`}
-                disabled={true}
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <Label for="company">Compañía</Label>
-              <Input
-                id="company"
-                name="company"
-                type="text"
-                value={company.name}
-                disabled={true}
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <Label for="website">Sitio Web</Label>
-              <Input
-                id="website"
-                name="website"
-                type="text"
-                value={website}
                 disabled={true}
               />
             </FormGroup>
